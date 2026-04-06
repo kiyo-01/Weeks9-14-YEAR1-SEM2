@@ -25,7 +25,7 @@ public class ToyBoxController : MonoBehaviour
         //only trigger when button is released
         if (context.canceled)
         {
-            Debug.Log("Gate passed!"); 
+            //Debug.Log("Gate passed!"); 
             OnRelease.Invoke(); //calls all modular stuff
         }
 
