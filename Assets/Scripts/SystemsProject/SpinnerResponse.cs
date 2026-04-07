@@ -8,7 +8,6 @@ public class SpinnerResponse : MonoBehaviour
     public UnityEvent OnNearStop;
     public float windUpTimer = 0f;
 
-    //settings
     public float slowWindSpeed = 50f;
     public float releaseMultiplier = 200f;
 
