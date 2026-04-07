@@ -6,6 +6,9 @@ using UnityEngine.Rendering;
 public class ToyBoxController : MonoBehaviour
 {
     public UnityEvent OnRelease; //event to be hooked up into the inspector
+    public UnityEvent OnStartWind;
+
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,9 +25,18 @@ public class ToyBoxController : MonoBehaviour
     //challenge 1: single input gate
     public void OnWind(InputAction.CallbackContext context)
     {
+        //only trigger when button is first pressed
+        if (context.started)
+        {
+           
+            OnStartWind.Invoke(); //start slow wind-up
+        }
+        
+        
         //only trigger when button is released
         if (context.canceled)
         {
+        
             //Debug.Log("Gate passed!"); 
             OnRelease.Invoke(); //calls all modular stuff
         }
